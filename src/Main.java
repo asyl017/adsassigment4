@@ -1,5 +1,5 @@
 import edge.Edge;
-import vertex.Vertex;
+import graph.WeightedGraph;
 
 public class Main {
     public static void main(String[] args) {
@@ -23,6 +23,18 @@ public class Main {
         vertex2.printVertex();
         System.out.println(vertex1.getData());
         */
+        WeightedGraph<Integer> weightedGraph = new WeightedGraph<>();
+        weightedGraph.addVertex(10);
+        weightedGraph.addVertex(15);
+        weightedGraph.addVertex(13);
+        weightedGraph.addVertex(11);
+        weightedGraph.addEdge(10, 11, 56);
+        weightedGraph.addEdge(11, 13, 112);
+        weightedGraph.addEdge(13, 15, 112);
+        weightedGraph.printWeightedGraph();
+        System.out.println(weightedGraph.hasEdge(10, 15, 112));//result is false
+
+        System.out.println(weightedGraph.getEdge(10));//result:[Edge{source=10, destination=11, weight=56.0}]
 
     }
 }

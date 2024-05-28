@@ -47,6 +47,15 @@ public class Edge<Vertex> {
     }
 
     @Override
+    public String toString() {
+        return "Edge{" +
+                "source = " + source +
+                ", destination = " + destination +
+                ", weight = " + weight +
+                '}';
+    }
+
+    @Override
     public boolean equals(Object obj) {
         if (this == obj) {
             return true;

@@ -1,12 +1,11 @@
 package graph;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import edge.Edge;
+
+import java.util.*;
 
 public class MyGraph<Vertex> {
-    private Map<Vertex, List<Vertex>> list;
+    private Map<Vertex, List<Vertex>> list = new HashMap<>();
 
     public MyGraph() {
         list = new HashMap<Vertex, List<Vertex>>();
@@ -36,6 +35,7 @@ public class MyGraph<Vertex> {
         }
     }
 
+
     public void removeEdge(Vertex source, Vertex destination) {
         checkVertex(destination);
         checkVertex(source);
@@ -54,5 +54,16 @@ public class MyGraph<Vertex> {
             System.out.print("Vertex " + vertex + " is connected to vertices" + getNeighbours(vertex));
         }
     }
+
+    public List<Vertex> adjacencyList(Vertex vertex) {
+        if (!hasVertex(vertex)) return null;
+
+        return list.get(vertex);
+    }
+
+    public boolean hasVertex(Vertex vertex) {
+        return list.containsKey(vertex);
+    }
+
 
 }
